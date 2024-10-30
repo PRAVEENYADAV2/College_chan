@@ -5,7 +5,7 @@ import TrackIP from "@/components/TrackIP";  // Import the IP tracking component
 export default async function Page({ params }: { params: { id: string } }) {
     // Fetching thread and replies
     const threadId = +params.id;
-    const [thread, replies]: any[] = await getThreadsAndReplies(threadId);
+    const [thread, replies]: object[] = await getThreadsAndReplies(threadId);
 
     // console.log(replies)
     return (
@@ -49,7 +49,7 @@ export default async function Page({ params }: { params: { id: string } }) {
             <div className="bg-white dark:bg-black shadow-lg rounded-lg sm:p-6 p-2">
                 <h2 className="text-xl font-semibold mb-6">Replies</h2>
                 {replies.length > 0 ? (
-                    replies.map((reply: any) => (
+                    replies.map((reply: object) => (
                         <div key={reply.id} className="mb-6">
                             <div className="flex w-full justify-between">
                                 <p className="mb-2">{reply.content}</p>

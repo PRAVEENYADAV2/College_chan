@@ -15,9 +15,7 @@ export default async function Page({ params }: { params: { board_id: string } })
                     {/* <button className="text-3xl dark:text-black" onClick={handleOpen}>
                         <IoCreateOutline />
                     </button> */}
-                    <CreatePostForm boardId={board_id} onClose={function (): void {
-                        throw new Error("Function not implemented.");
-                    } } ></CreatePostForm>
+                    <CreatePostForm boardId={board_id} ></CreatePostForm>
                 </div>
 
                 {/* Threads List */}

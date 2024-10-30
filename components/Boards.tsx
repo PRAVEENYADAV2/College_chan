@@ -1,6 +1,6 @@
 'use client'
 
-export default function Boards(boards : any) {
+export default function Boards(boards : object) {
     return (
         < div className='mb-4' >
             <div className='bg-[#38BDF8] text-white font-extrabold md:text-xl text-md p-2 border-black dark:border-white border-2'>

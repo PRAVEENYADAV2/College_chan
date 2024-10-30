@@ -1,6 +1,6 @@
 import getStats from "@/lib/getStats"
 export default async function Stats() {
-    const data : any  = await getStats()
+    const data: object = await getStats()
     console.log(data)
     return (
         <div className="stats mb-4">

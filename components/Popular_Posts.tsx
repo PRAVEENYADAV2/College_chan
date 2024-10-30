@@ -10,7 +10,7 @@ const Popular_Posts: React.FC<PopularPostsProps> = ({ popular_threads }) => {
                 <h1>Popular Posts</h1>
             </div>
             <div className="grid md:grid-cols-4 sm:grid-cols-3 gap-2 md:p-5 p-2 border border-black dark:border-white">
-                {popular_threads.map((thread: any) =>
+                {popular_threads.map((thread: object) =>
                 // console.log(thread)
                 (
                     <a href={`/thread/${thread.id}`} key={thread.id}

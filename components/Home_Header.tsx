@@ -30,7 +30,7 @@ export default function Header() {
 
                             College Chan is a simple image-based bulletin board where anyone can post comments and share images. There are boards dedicated to all BTech subjects, from Computer Science and Engineering to Electronics, Mechanical, and Civil Engineering. Users do not need to register an account before participating in the community. Feel free to click on a subject below that interests you and jump right in!
 
-                            For those who want to unwind, we also have a section dedicated to Casual Chat & Shitposting. Share memes, jokes, and random thoughts to your heart's content—just keep it within the community rules!
+                            For those who want to unwind, we also have a section dedicated to Casual Chat & Shitposting. Share memes, jokes, and random thoughts to your heart&apos;s content—just keep it within the community rules!
                             <br />
                             <br />
                             <br />

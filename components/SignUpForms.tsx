@@ -1,10 +1,16 @@
-// components/SignupForm.js
-"use client"
+"use client";
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
-// import { log } from 'console';
+
+// Define a type for the form values
+interface SignupFormValues {
+    username: string;
+    email: string;
+    password: string;
+    role: 'admin' | 'moderator' | 'super_moderator';
+}
 
 const SignupSchema = Yup.object().shape({
     username: Yup.string().required('Username is required'),
@@ -16,21 +22,21 @@ const SignupSchema = Yup.object().shape({
 });
 
 const SignupForm = () => {
-    const handleSubmit = async (values: any, { setSubmitting, resetForm }: any) => {
+    const handleSubmit = async (values: SignupFormValues, { setSubmitting, resetForm }: { setSubmitting: (isSubmitting: boolean) => void; resetForm: () => void; }) => {
         try {
             await axios.post('/api/signup', values);
             alert('Signup successful!');
             resetForm();
         } catch (error) {
             alert('Signup failed. Please try again.');
+            console.error(error); // Optionally log the error for debugging
         }
         setSubmitting(false);
     };
 
     return (
         <div className='bg-yellow-50 min-h-[100vh] p-5'>
-
-            <div className="max-w-md bg-white  mx-auto  shadow-md rounded-lg p-6 ">
+            <div className="max-w-md bg-white mx-auto shadow-md rounded-lg p-6 ">
                 <h2 className="text-2xl font-bold mb-6 text-center">Moderator Signup</h2>
                 <Formik
                     initialValues={{

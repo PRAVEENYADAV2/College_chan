@@ -7,7 +7,6 @@ import imageCompression from 'browser-image-compression';
 export default function ReplyForm({ threadId, whomToReply }: { threadId: number; whomToReply: string }) {
     const [showForm, setShowForm] = useState(false);
     const [replyContent, setReplyContent] = useState("");
-    const [image, setImage] = useState<File | null>(null);
     const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
     const handleReplySubmit = async (e: React.FormEvent) => {
@@ -56,11 +55,6 @@ export default function ReplyForm({ threadId, whomToReply }: { threadId: number;
         } catch (error) {
             console.error('Error submitting form:', error);
         }
-
-        // Reset the form and hide it after submission
-        setReplyContent("");
-        setImage(null);
-        setShowForm(false);
     };
 
     useEffect(() => {
@@ -69,7 +63,7 @@ export default function ReplyForm({ threadId, whomToReply }: { threadId: number;
             textareaRef.current.focus();
             textareaRef.current.setSelectionRange(replyContent.length, replyContent.length);
         }
-    }, [showForm, whomToReply]);
+    }, [showForm, whomToReply,replyContent.length]);
 
     return (
         <div className="mt-2">

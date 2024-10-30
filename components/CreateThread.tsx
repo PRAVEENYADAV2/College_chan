@@ -164,7 +164,7 @@
 import { IoMdClose } from "react-icons/io";
 import { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import { IoCreateOutline } from 'react-icons/io5';
 import imageCompression from 'browser-image-compression';
 
@@ -180,7 +180,7 @@ const CreatePostForm: React.FC<FormProps> = ({ boardId }) => {
     const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
     const formRef = useRef<HTMLDivElement>(null);
     const dragHandleRef = useRef<HTMLButtonElement>(null);
-    const router = useRouter();
+
 
 
 
