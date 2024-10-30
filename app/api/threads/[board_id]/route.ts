@@ -2,8 +2,6 @@ import { NextResponse } from 'next/server';
 import getThreads from '@/lib/getThreads';
 import axios from 'axios';
 import { NextRequest } from 'next/server';
-import path from "path";
-import { writeFile } from "fs/promises";
 import pool from '@/lib/db';
 
 interface Params {
@@ -64,7 +62,7 @@ export async function POST(req: NextRequest, { params }: { params: { board_id: s
 
     return NextResponse.json({ Message: "Success", status: 201, data, result });
 
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Error processing form:', error);
     return NextResponse.json({ error: 'Error processing form', details: error.message }, { status: 500 });
   }

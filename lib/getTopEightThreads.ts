@@ -3,7 +3,7 @@ import pool from './db';
 export default async function getTopEightThreads() {
     try {
         // Parameterized query to get top 8 threads by most replies along with board name
-        const [rows]: any[] = await pool.query(`
+        const [rows]: object[] = await pool.query(`
             SELECT 
                 threads.id, 
                 boards.name, 
@@ -23,7 +23,7 @@ export default async function getTopEightThreads() {
                 reply_count DESC
             LIMIT 8
         `);
-        
+
         return rows;
     } catch (error) {
         console.error('Error fetching top threads:', error);

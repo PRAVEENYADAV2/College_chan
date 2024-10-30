@@ -1,17 +1,5 @@
 import getThreads from "@/lib/getThreads";
 import CreatePostForm from '@/components/CreateThread'
-
-interface Thread {
-    id: number;
-    title: string;
-    content: string;
-    image_path?: string;
-}
-
-interface BoardData {
-    name: string;
-}
-
 export default async function Page({ params }: { params: { board_id: string } }) {
     const board_id = params.board_id;
     const [threads_data, board_data] = await getThreads(+board_id);
@@ -27,7 +15,9 @@ export default async function Page({ params }: { params: { board_id: string } })
                     {/* <button className="text-3xl dark:text-black" onClick={handleOpen}>
                         <IoCreateOutline />
                     </button> */}
-                    <CreatePostForm boardId={board_id} ></CreatePostForm>
+                    <CreatePostForm boardId={board_id} onClose={function (): void {
+                        throw new Error("Function not implemented.");
+                    } } ></CreatePostForm>
                 </div>
 
                 {/* Threads List */}
