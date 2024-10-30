@@ -34,7 +34,7 @@ export async function POST(req: NextRequest, { params }: { params: { board_id: s
       // Prepare the upload to Cloudinary
       const uploadData = new FormData();
       uploadData.append("file", file);
-      uploadData.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET); // Your Cloudinary upload preset
+      uploadData.append("upload_preset", process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET || "college_chan"); // Your Cloudinary upload preset
       uploadData.append("quality", "auto:eco"); // Set quality to auto:eco
       uploadData.append("fetch_format", "auto"); // Optional: Use auto for fetch format
 
