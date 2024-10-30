@@ -24,7 +24,7 @@ export async function POST(request: Request) {
     `;
 
     // Run the query (assuming you are using MySQL or similar with `pool`)
-    const result = await pool.query(query, [username, email, password_hash, role]);
+  await pool.query(query, [username, email, password_hash, role]);
 
     return NextResponse.json(
       { message: 'Moderator created successfully' },
