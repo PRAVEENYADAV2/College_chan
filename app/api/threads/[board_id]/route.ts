@@ -64,7 +64,7 @@ export async function POST(req: NextRequest, { params }: { params: { board_id: s
 
   } catch (error: unknown) {
     console.error('Error processing form:', error);
-    return NextResponse.json({ error: 'Error processing form', details: error.message }, { status: 500 });
+    return NextResponse.json({ error: 'Error processing form' }, { status: 500 });
   }
 }
 
